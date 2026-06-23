@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Adding of Numbers
+        </title>
+        <style>
+            .container{
+                box-shadow: 0 1px 1px black;
+                place-items: center;
+                text-align: start;
+                width: 12cm;
+                left:15cm;
+                
+                height:6cm;
+                padding: 1cm;
+                margin-left: 10cm;
+                margin-top: 5cm;
+                display:box;
+                text-size-adjust: initial;
+            }
+            input{
+                width:100%;
+                margin: width 2cm;;
+
+            }
+            button{
+                position:absolute;
+                background-color:green;
+                color:black;
+                width: 12cm;
+                margin: width 3cm;
+                text-align: center;
+            }
+            p{
+                color:red;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <label>
+              <h2> First Number:</h2>
+              <input type="number"  id="first" placeholder="enter first number" required>
+            </label>
+            <br>
+
+            
+            <label> <h2> Second Number:</h2> <input type="number" id="second" placeholder="enter second number" required>
+            </label>
+            <br>
+            <br>
+            
+            <button type = "submit" onclick="add()" >submit</button>
+            <br>
+            
+
+            <p id="result"></p>
+        </div>
+        <script >
+            function add( ){
+               let first = Number(document.getElementById("first").value);
+                let second = Number(document.getElementById("second").value);
+                let result= first + second;
+                document.getElementById("result").innerHTML = result;
+                return result; 
+            }
+        </script>
+    </body>
+</html>
