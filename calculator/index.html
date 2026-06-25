@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title> Calculator </title>
+    <style>
+        .container{
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            padding:40px;
+
+        }
+        .cal{
+            text-align: center;
+            width:350px;
+            height:400px;
+            align-items: center;
+            background-color: darkslategrey;
+            padding:20px;
+            border-radius: 12px;
+            
+            
+        }
+        #result{
+
+            top:100px;
+            width:300px;
+            height:40px;
+            border-radius: 12px;
+            text-align: right;
+            color:rgb(39, 39, 39);
+            padding:15px;
+            font-size: x-large;
+        }
+        body{
+            align-items: center;
+            justify-content: center;
+            display:flex;
+        
+            height:100vh;
+        }
+        
+       button{
+        height:50px;
+        width:60px;
+        border-radius: 12px;
+        text-align: center;
+        row-gap: 2px;
+        column-gap: 1px;
+
+       }
+       #eq{
+             grid-column:span 3;
+             width:220px;
+             height:50px;
+             border-radius: 12px;
+       }
+            
+            
+            
+    
+        #con{
+            display: grid;
+            grid-template-columns: repeat(4,80px);
+            gap:3px;
+
+        }
+       
+    </style>
+    </head>
+    <body>
+        <div class="cal">
+            <input type="text" id="result" readonly>
+            <br>
+            <div class="container" id="con">
+          
+          <button onclick="appendValue('1')">1</button>
+          <button onclick="appendValue('2')">2</button>
+          <button onclick="appendValue('3')">3</button>
+          <button onclick="appendValue('/')">/</button>
+          <button onclick="appendValue('4')">4</button>
+          
+          <button onclick="appendValue('5')">5</button>
+          
+          <button onclick="appendValue('6')">6</button>
+          
+          <button onclick="appendValue('*')">*</button>
+          
+          <button onclick="appendValue('7')">7</button>
+          
+          <button onclick="appendValue('8')">8</button>
+          
+          <button onclick="appendValue('9')">9</button>
+          
+          <button onclick="appendValue('-')">-</button>
+          <button onclick="clearresult()">AC</button>
+          <button onclick="appendValue('0')">0</button>
+          <button onclick="appendValue('.')">.</button>
+            <button onclick="appendValue('+')">+</button>
+          <button onclick="cal()"  id="eq">=</button>
+          <button onclick="appendValue('%')">%</button>
+        </div> 
+        </div>
+        <script>
+            function appendValue(value){
+                document.getElementById("result").value += value;
+
+            }
+            function clearresult(){
+                document.getElementById("result").value = "";
+            }
+            function cal(){
+                try{
+                    document.getElementById("result").value = eval(document.getElementById("result").value);
+                }
+                catch{
+                    document.getElementById("result").value = "error";
+                }
+            }
+
+        </script>
+    </body>
+</html>
